@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Animated Rainbow Nature Scene</title>
+<style>
+    body{
+        margin:0;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        min-height:100vh;
+        background:#f0f8ff;
+    }
+</style>
+</head>
+<body>
+
+<svg width="900" height="550" viewBox="0 0 900 550" style="border:2px solid black">
+
+    <!-- Sky -->
+    <rect width="900" height="550" fill="skyblue"/>
+
+    <!-- Sun -->
+    <circle cx="120" cy="100" r="50" fill="yellow" stroke="orange" stroke-width="3"/>
+
+    <!-- Clouds -->
+    <g fill="white">
+        <!-- Left Cloud -->
+        <g>
+            <animateTransform
+                attributeName="transform"
+                type="translate"
+                values="0,0;40,0;0,0"
+                dur="20s"
+                repeatCount="indefinite"/>
+            <circle cx="250" cy="100" r="30"/>
+            <circle cx="280" cy="80" r="35"/>
+            <circle cx="320" cy="100" r="30"/>
+        </g>
+
+        <!-- Right Cloud -->
+        <g>
+            <animateTransform
+                attributeName="transform"
+                type="translate"
+                values="0,0;-40,0;0,0"
+                dur="25s"
+                repeatCount="indefinite"/>
+            <circle cx="650" cy="120" r="30"/>
+            <circle cx="680" cy="100" r="35"/>
+            <circle cx="720" cy="120" r="30"/>
+        </g>
+    </g>
+
+    <!-- Rainbow -->
+    <path d="M150 400 A300 300 0 0 1 750 400" stroke="red" stroke-width="12" fill="none"/>
+    <path d="M165 400 A285 285 0 0 1 735 400" stroke="orange" stroke-width="12" fill="none"/>
+    <path d="M180 400 A270 270 0 0 1 720 400" stroke="yellow" stroke-width="12" fill="none"/>
+    <path d="M195 400 A255 255 0 0 1 705 400" stroke="green" stroke-width="12" fill="none"/>
+    <path d="M210 400 A240 240 0 0 1 690 400" stroke="blue" stroke-width="12" fill="none"/>
+    <path d="M225 400 A225 225 0 0 1 675 400" stroke="indigo" stroke-width="12" fill="none"/>
+    <path d="M240 400 A210 210 0 0 1 660 400" stroke="violet" stroke-width="12" fill="none"/>
+
+    <!-- Ground -->
+    <rect x="0" y="400" width="900" height="150" fill="lightgreen"/>
+
+    <!-- Left Tree -->
+    <rect x="70" y="300" width="25" height="100" fill="saddlebrown"/>
+    <circle cx="82" cy="260" r="40" fill="darkgreen"/>
+    <circle cx="55" cy="285" r="30" fill="green"/>
+    <circle cx="110" cy="285" r="30" fill="green"/>
+
+    <!-- Right Tree -->
+    <rect x="780" y="300" width="25" height="100" fill="saddlebrown"/>
+    <circle cx="792" cy="260" r="40" fill="darkgreen"/>
+    <circle cx="765" cy="285" r="30" fill="green"/>
+    <circle cx="820" cy="285" r="30" fill="green"/>
+
+    <!-- Flower 1 -->
+    <line x1="180" y1="400" x2="180" y2="360" stroke="green" stroke-width="3"/>
+    <circle cx="180" cy="350" r="8" fill="yellow"/>
+    <circle cx="170" cy="350" r="6" fill="red"/>
+    <circle cx="190" cy="350" r="6" fill="red"/>
+    <circle cx="180" cy="340" r="6" fill="red"/>
+    <circle cx="180" cy="360" r="6" fill="red"/>
+
+    <!-- Flower 2 -->
+    <line x1="300" y1="400" x2="300" y2="360" stroke="green" stroke-width="3"/>
+    <circle cx="300" cy="350" r="8" fill="yellow"/>
+    <circle cx="290" cy="350" r="6" fill="hotpink"/>
+    <circle cx="310" cy="350" r="6" fill="hotpink"/>
+    <circle cx="300" cy="340" r="6" fill="hotpink"/>
+    <circle cx="300" cy="360" r="6" fill="hotpink"/>
+
+    <!-- Flower 3 -->
+    <line x1="600" y1="400" x2="600" y2="360" stroke="green" stroke-width="3"/>
+    <circle cx="600" cy="350" r="8" fill="yellow"/>
+    <circle cx="590" cy="350" r="6" fill="purple"/>
+    <circle cx="610" cy="350" r="6" fill="purple"/>
+    <circle cx="600" cy="340" r="6" fill="purple"/>
+    <circle cx="600" cy="360" r="6" fill="purple"/>
+
+    <!-- Animated Butterfly -->
+    <g>
+        <animateTransform
+            attributeName="transform"
+            type="translate"
+            values="-450,0; -250,-20; 0,15; 250,-10; 450,0"
+            dur="12s"
+            repeatCount="indefinite"/>
+
+        <!-- Upper Left Wing -->
+        <ellipse cx="430" cy="205" rx="20" ry="30" fill="deeppink">
+            <animate attributeName="ry"
+                     values="30;18;30"
+                     dur="0.35s"
+                     repeatCount="indefinite"/>
+        </ellipse>
+
+        <!-- Upper Right Wing -->
+        <ellipse cx="470" cy="205" rx="20" ry="30" fill="deeppink">
+            <animate attributeName="ry"
+                     values="30;18;30"
+                     dur="0.35s"
+                     repeatCount="indefinite"/>
+        </ellipse>
+
+        <!-- Lower Left Wing -->
+        <ellipse cx="430" cy="240" rx="18" ry="25" fill="violet">
+            <animate attributeName="ry"
+                     values="25;12;25"
+                     dur="0.35s"
+                     repeatCount="indefinite"/>
+        </ellipse>
+
+        <!-- Lower Right Wing -->
+        <ellipse cx="470" cy="240" rx="18" ry="25" fill="violet">
+            <animate attributeName="ry"
+                     values="25;12;25"
+                     dur="0.35s"
+                     repeatCount="indefinite"/>
+        </ellipse>
+
+        <!-- Body -->
+        <ellipse cx="450" cy="220" rx="6" ry="25" fill="black"/>
+
+        <!-- Antennae -->
+        <line x1="448" y1="195" x2="438" y2="180"
+              stroke="black" stroke-width="2"/>
+        <line x1="452" y1="195" x2="462" y2="180"
+              stroke="black" stroke-width="2"/>
+    </g>
+
+</svg>
+
+</body>
+</html>
